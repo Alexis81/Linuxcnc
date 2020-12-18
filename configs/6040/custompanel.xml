@@ -105,6 +105,11 @@
             <text>"Set Z0"</text>
             <font>('Fixed',12)</font>
          </button>
+	 <button>
+            <halpin>"o113"</halpin>
+            <text>"Touche Off Z Pied"</text>
+            <font>('fixed',16)</font>
+         </button>
       </hbox>
       <hbox>
          <relief>RIDGE</relief>

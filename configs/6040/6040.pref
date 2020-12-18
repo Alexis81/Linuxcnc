@@ -1,14 +1,14 @@
 [DEFAULT]
 chk_set_zero = True
 chk_auto_rott = False
-ps_searchvel = 200.0
+ps_searchvel = 600.0
 ps_probevel = 15.0
 ps_z_clearance = 10.0
 ps_probe_max = 10.0
 ps_probe_latch = 1.0
 ps_probe_diam = 3.0
 ps_xy_clearance = 10.0
-ps_edge_lenght = 14.5
+ps_edge_lenght = 125.0
 ps_offs_x = 0.0
 ps_offs_y = 0.0
 ps_offs_z = 0.0
@@ -85,6 +85,6 @@ unhomed_color = red
 dro_digits = 3
 toggle_readout = True
 use_toolmeasurement = False
-probeheight = -9.55857188253
+probeheight = 11.25
 blockheight = 0.0
 
