@@ -26,17 +26,19 @@ net remote-o105 halui.mdi-command-04 <= pyvcp.o105
 # *** G92 Z0 **************************************
 net remote-o106 halui.mdi-command-05 <= pyvcp.o106
 
-# *** Center Hole *******************************
-net remote-o110 halui.mdi-command-09 <= pyvcp.o110
+
 
 # *** Epaisseur Table*******************************
-net remote-o111 halui.mdi-command-10 <= pyvcp.o111
+net remote-o111 halui.mdi-command-11 <= pyvcp.o111
 
 # *** Epaisseur Pièce*******************************
-net remote-o112 halui.mdi-command-11 <= pyvcp.o112
+net remote-o112 halui.mdi-command-12 <= pyvcp.o112
 
 # *** Z Probe Lampe **************************************
-net remote-o113 halui.mdi-command-12 <= pyvcp.o113
+net remote-o113 halui.mdi-command-13 <= pyvcp.o113
+
+# *** Center Hole **************************************
+net remote-o114 halui.mdi-command-14 <= pyvcp.o114
 
 # *** Pin pour la led du probe *********************
 net probe-in => pyvcp.led-probe-in

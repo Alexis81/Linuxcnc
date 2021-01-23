@@ -4,21 +4,16 @@ o105 sub
    G21 (Programme en mm)
    M5  (Arret de la broche)
    G90 G53 G0 Z0 (Mise en securite de Z)
-   G90 G53 X-10.207 Y-519.875 (Position du capteur)
-   G90 G53 Z-5 (Faire descendre Z)
+   G90 G53 X-7.256 Y-519.875 (Position du capteur)
+   G90 G53 Z-15 (Faire descendre Z)
    G91
-   G38.2 Z-60 F300 (Cherche contact sur Z)
-   G0 Z1 (Remonte Z de 1)
-   G4 P0.5 (Faire une pause)
-   G38.2 Z-3 f20 (Recherche lentement Z)
-   G0 Z0.5 (Remonte Z de 1)
-   G4 P0.5 (Faire une pause)
-   G38.2 Z-3 f10 (Recherche lentement Z)
-   G0 Z0.25 (Remonte Z de 1)
+   G38.2 Z-60 F500 (Cherche contact sur Z)
+   G0 Z0.8 (Remonte Z de 1)
+   
    G4 P0.5 (Faire une pause)
    G38.2 Z-3 f10 (Recherche lentement Z)
  
-   G92 Z-4.818 (Epaisseur de la gauge, décalage entre la sonde et le martir)
+   G92 Z-5.06645 (Epaisseur de la gauge, décalage entre la sonde et le martir)
    G91
    G90 G53 G0 Z0 (Mise en securite de Z)
 G90

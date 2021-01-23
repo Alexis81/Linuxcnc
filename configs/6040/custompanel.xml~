@@ -105,6 +105,11 @@
             <text>"Set Z0"</text>
             <font>('Fixed',12)</font>
          </button>
+	 <button>
+            <halpin>"o113"</halpin>
+            <text>"Touche Off Z Pied"</text>
+            <font>('fixed',16)</font>
+         </button>
       </hbox>
       <hbox>
          <relief>RIDGE</relief>
@@ -119,6 +124,7 @@
             <text>"Rapide to Home"</text>
             <font>('Fixed',10)</font>
          </button>
+         
       </hbox>
    </vbox>
    <hbox />
@@ -134,15 +140,16 @@
          <font>('fixed',12)</font>
       </button>
       <button>
+         <halpin>"o114"</halpin>
+         <text>"Epaisseur pièce Cale"</text>
+         <font>('fixed',12)</font>
+      </button>
+      <button>
          <halpin>"o104"</halpin>
          <text>"Touche Corner"</text>
          <font>('fixed',12)</font>
       </button>
-      <button>
-         <halpin>"o110"</halpin>
-         <text>"Offset"</text>
-         <font>('fixed',12)</font>
-      </button>
+      
    </hbox>
    <labelframe text="Informations">
       <font>("Helvetica",10)</font>

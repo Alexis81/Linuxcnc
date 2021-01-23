@@ -1,5 +1,6 @@
-o112 sub
+o114 sub
 
+   #1001=1.5 (epaisseur jauge 1.50)
    #1002=0    (valeur calcul)
 
    (*** Epaisseur Pièce ***)
@@ -7,7 +8,9 @@ o112 sub
    (AXIS,notify, test : #<_z> - EXITING)
 
    (debug, Epaisseur pièce...)
- 
+
+   (debug, Epaisseur jauge : #1002)
+  
    G21 (Programme en mm)
    M5  (Arret de la broche)
    G90 G53 G0 Z0 (Mise en securite de Z)
@@ -20,9 +23,9 @@ o112 sub
    G38.2 Z-3 f10 (Recherche lentement Z)
    G91
    (Calcul hauteur piece)
-   #1002=#<_z>
+   #1002=[#<_z> - #1001]
    (#<_Z> = Return current Position Z)
    (debug, Epaisseur pièce : #1002)
    G90 G53 G0 Z0 (Mise en securite de Z)
 G90
-o112 endsub
+o114 endsub
