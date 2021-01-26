@@ -11,13 +11,13 @@ loadusr -Wn vfd python /home/alexis/linuxcnc/configs/6040/nowforever_vfd.py
 setp vfd.spdvfd.run 1
 
 # Direction de la broche
-net spindle-fwd motion.spindle-forward => vfd.spdvfd.forward
+net spindle-fwd spindle.0.forward => vfd.spdvfd.forward
 
 # Démarre la broche et la pompe à eau (pin-16-out)
-net spindle-on motion.spindle-on => vfd.spdvfd.run => parport.0.pin-16-out
+net spindle-on spindle.0.on => vfd.spdvfd.run => parport.0.pin-16-out
 
 # Permet d'attendre que la broche soit à la bonne vitesse
-net spindle-ready <= vfd.spdvfd.atfreq => motion.spindle-at-speed
+net spindle-ready <= vfd.spdvfd.atfreq => spindle.0.at-speed
 
 # Vitesse de la broche
 net spindle-cmd-rpm-abs => vfd.spdvfd.rpmset

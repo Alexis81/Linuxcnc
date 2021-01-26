@@ -1,0 +1,58 @@
+# include your customized HAL commands here
+# This file will not be overwritten when you run stepconf again
+
+#loadusr hal_input -W -KRAL "DragonRise Inc.   Generic   USB  Joystick  "
+#loadusr hal_input -W -KRAL Generic
+#loadusr -W hal_input -KRAL Generic
+loadusr -W hal_input -KRAL DragonRise Inc.   Generic   USB  Joystick
+#loadusr -W hal_input -KRAL DragonRise Inc.
+#loadusr hal_joystick -d /dev/input/js0 -p joypad
+#net joystick_enable <= input.0.btn-trigger => axis.0.jog-enable
+
+
+ #хел файл джойстика (сборная солянка)
+loadrt mux8 count=1
+addf mux8.0 servo-thread
+
+#---------------------------
+# 
+setp axis.0.jog-vel-mode  true
+setp axis.1.jog-vel-mode  true
+setp axis.2.jog-vel-mode  true
+
+# назначаем выводы управления мультиплексором 
+# соединяем вывод джойстика торец низ с мультиплексором"0"
+net gamepad_analog_jog-enable input.0.btn-base   mux8.0.sel0
+# соединяем вывод джойстика торец верх с мультиплексором "1"
+net gamepad_continue_jog-enable input.0.btn-top2  mux8.0.sel1
+# соединяем вывод джойстика лев джойстик нажать сверху с выводом мультиплексора"2"
+net gamepad_contin_jog-up input.0.btn-base5  mux8.0.sel2
+
+
+# скорость станка когда не нахата не одна кнопка. 
+setp mux8.0.in0 31.0
+
+# скорость станка когда нажата кнопка "торец низ лев"
+setp mux8.0.in1 200.0
+
+# скорость станка когда нажата "торец верх лев"
+setp mux8.0.in2 12.0
+
+# скорость станка когда нажаты оба кнопки "торец низ и торец верх,  лев" 
+setp mux8.0.in3 120.0
+
+# скорость станка когда прижат сверху рычаг левого джойстика можно назначить Ж"0"
+setp mux8.0.in4 1520.0 
+
+# ну и на всяк случай 
+setp mux8.0.in5 0.0
+setp mux8.0.in6 0.0
+setp mux8.0.in7 0.0
+
+# запихиваем заданные скоростя в LinuxCNC 
+net gamepad_jog-speed halui.jog-speed <= mux8.0.out
+
+# присоединяем пин джойстика управления осью с сигналом  LinuxCNC управления осью   
+net jog_scale input.0.abs-x-position => halui.jog.0.analog
+net jog_scale1 input.0.abs-y-position => halui.jog.1.analog
+net jog_scale2 input.0.abs-z-position => halui.jog.2.analog
