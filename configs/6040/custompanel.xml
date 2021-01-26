@@ -107,8 +107,8 @@
          </button>
 	 <button>
             <halpin>"o113"</halpin>
-            <text>"Touche Off Z Pied"</text>
-            <font>('fixed',16)</font>
+            <text>"Center Cam"</text>
+            <font>('fixed',12)</font>
          </button>
       </hbox>
       <hbox>

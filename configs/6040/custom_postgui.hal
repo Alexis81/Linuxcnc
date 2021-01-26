@@ -33,7 +33,7 @@ net remote-o111 halui.mdi-command-11 <= pyvcp.o111
 # *** Epaisseur Pièce*******************************
 net remote-o112 halui.mdi-command-12 <= pyvcp.o112
 
-# *** Z Probe Lampe **************************************
+# *** Center Cam **************************************
 net remote-o113 halui.mdi-command-13 <= pyvcp.o113
 
 # *** Center Hole **************************************
